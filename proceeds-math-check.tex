@@ -1,0 +1,156 @@
+\documentclass[10pt,letterpaper,oneside]{article}
+\usepackage{amssymb,amsmath}
+
+\begin{document}
+
+\title{Proceeds Divided Between Two Parties\\with Recouped Costs}
+\author{Jason Massey}
+\date{\today}
+\maketitle
+
+% -----------------------------------------------------------------------------
+\begin{abstract}
+This article investigates mathematical principles when two parties agree to share proceeds in the sale of an asset,
+with one party wishing to recoup invested costs.
+\end{abstract}
+
+% -----------------------------------------------------------------------------
+\section{Setting}
+There exist two parties, $L$ and $J$, being equal shareholders in an asset $A$ to be sold.
+The proceeds $P$ from the sale are to be divided evenly after $L$ first recoups costs~$C$ (which were invested into $A$,
+presumably to increase $A$'s pre-sale value).
+The resultant proceeds belonging to $L$ and $J$ are denoted $P_L$ and $P_J$, respectively.
+
+\subsection*{Constraints}
+\begin{gather*}
+P \ge C \ge 0               \\[10pt]
+P_L \ge P_J
+\end{gather*}
+
+% -----------------------------------------------------------------------------
+\section{Method to Calculate Proper Proceeds}
+\begin{enumerate}
+\item Begin with total proceeds $P$.
+\item Immediately subtract from $P$ the costs $C$ of $L$, allocating $C$ to $P_L$.
+\item The remaining proceeds, $P-C$, are to be divided equally with $\frac{P-C}{2}$ being allocated to both $P_L$ and $P_J$.
+\end{enumerate}
+
+% -----------------------------------------------------------------------------
+\section{Proper Proceeds}
+By following the aforementioned method, the respective \emph{proper} proceeds are:
+
+\begin{align}
+P_L &= C + \frac{P-C}{2} \\[10pt]
+P_J &= \frac{P-C}{2}
+\end{align}
+
+\noindent
+Note the following:
+
+\begin{equation}
+P_L = C + P_J       \label{l_e_c_plus_j}
+\end{equation}
+
+
+%\newpage
+% -----------------------------------------------------------------------------
+\section{Relationships}
+
+\subsection{Individual proceeds sum to $P$.}
+The sum of the individual proceeds for $L$ and $J$ equal total proceeds $P$:
+\begin{equation}
+P_L + P_J = P
+\end{equation}
+
+\noindent
+proof:
+
+\begin{align*}
+P_L + P_J &=  \\[10pt]
+\left(C + \frac{P-C}{2}\right) + \left(\frac{P-C}{2}\right) &= \\[10pt]
+C + \frac{P-C}{2} + \frac{P-C}{2} &= \\[10pt]
+C + 2\left( \frac{P-C}{2} \right)  &= \\[10pt]
+C + \left( P-C \right)  &= \\[10pt]
+C + P-C &= \\[10pt]
+P & \quad\blacksquare
+\end{align*}
+
+\newpage
+\subsection{Subtracting $P_J$ from $P_L$ leaves $C$.}
+To confirm that $L$ recoups costs $C$ entirely, it must be shown that:
+
+\begin{equation}
+P_L - P_J = C       \label{l_m_j_e_c}\\[10pt]
+\end{equation}
+
+\noindent
+Although (\ref{l_m_j_e_c}) follows naturally from (\ref{l_e_c_plus_j}), it is nevertheless proven below.
+
+\begin{align*}
+P_L - P_J &= \\[10pt]
+\left(C + \frac{P-C}{2}\right) - \left(\frac{P-C}{2}\right) &= \\[10pt]
+C + \frac{P-C}{2} - \frac{P-C}{2} &= \\[10pt]
+C + \left(\frac{P-C}{2}\right)(1-1) &= \\[10pt]
+C + \left(\frac{P-C}{2}\right)(0) &= \\[10pt]
+C & \quad\blacksquare
+\end{align*}
+
+
+\newpage
+\subsection{When the costs to be recouped $C$ are zero, $P_L$ and $P_J$ are both equal to split proceeds.}
+Given (\ref{l_m_j_e_c}), it follows when $C=0$ that:
+
+\begin{align*}
+P_L - P_J &= 0                      \\[10pt]
+P_L &= P_J                          \\[10pt]
+C + \frac{P-C}{2} &= \frac{P-C}{2}  \\[10pt]
+0 + \frac{P-0}{2} &= \frac{P-0}{2}  \\[10pt]
+\frac{P}{2} &= \frac{P}{2}          \quad\blacksquare   \\[10pt]
+\end{align*}
+
+
+\newpage
+\subsection{If $L$ and $J$ are forced to equally split $P$, then $J$ shall owe to $L$ exactly $\frac{C}{2}$.}
+
+Closing coordinators at title companies might not be aware of $L$ and $J$'s agreement to have $L$ recoup
+costs $C$ before evenly sharing the remaining proceeds $P-C$.
+In this case, $L$ and $J$ would be forced to split $P$ in half,
+receiving \emph{improper} proceeds $P_i$ of:
+
+\begin{equation}
+P_i = \frac{P}{2}       \\[10pt]
+\end{equation}
+
+\noindent
+with the notable property given $C>0$:
+
+\begin{equation}
+P_i < P_L       \\[10pt]
+\end{equation}
+
+\noindent
+In this situation, in order to make $L$'s proceeds \emph{proper,} $J$ would need to pay a reconciliation $R$ to $L$ computed as:
+
+\begin{equation}
+R = P_L - P_i       \\[10pt]
+\end{equation}
+
+\noindent
+namely,
+
+\begin{align*}
+R &= P_L - P_i                                                      \\[10pt]
+&= \left( C + \frac{P-C}{2} \right) - \left(\frac{P}{2}\right)      \\[10pt]
+&= C + \frac{P-C}{2} - \frac{P}{2}                                  \\[10pt]
+&= C + \frac{P-C-P}{2}                                              \\[10pt]
+&= C + \frac{-C}{2}                                                 \\[10pt]
+&= \frac{2C}{2} + \frac{-C}{2}                                      \\[10pt]
+&= \frac{2C-C}{2}                                                   \\[10pt]
+&= \frac{C}{2}      \quad\blacksquare                               \\[10pt]
+\end{align*}
+
+
+\end{document}
+
+% -----------------------------------------------------------------------------
+% vim: tw=0 nowrap et
